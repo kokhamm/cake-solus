@@ -1,0 +1,89 @@
+
+// 1. Product
+
+.product{
+   &__container {
+      max-width: 1112px;
+      margin: 0 auto;
+   }
+   &__header{
+      font-size: 40px;
+      line-height: 60px;
+      text-align: center;
+      @media (max-width: 400px) {
+         font-size: 35px;
+         line-height: 50px;
+      }
+   }
+   &__intro{
+      margin-bottom: 120px;
+      @media (max-width: 400px) {
+         margin-bottom: 60px;
+      }
+   }
+   &__card{
+      padding: 50px;
+      border-radius: 4px;
+      &-div{
+         width: 200px;
+         height: 120px;
+         background-color: white;
+         opacity: 0.6;
+         margin-bottom: 120px;
+      }
+   }
+   &__card-yellow{
+      background-image: url('../img/Bitmap.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+   }
+   &__card-green{
+      background-color: #02B31B;
+   }
+   &__button{
+      width: 300px;
+      color: white;
+      border: 2px solid white;
+      border-radius: 4px;
+      font-size: 24px;
+      line-height: 31px;
+      height: 60px;
+      margin-right: 50px;
+      margin-left: 50px;
+      transition: 0.4s;
+      background-color: transparent;
+      @media (max-width: 400px) {
+         margin-right: 0px;
+            margin-left: 0px;
+      }
+      &-green{
+         &:hover {
+            color: #02B31B;
+            background-color: white;
+            scale: 1.05;
+         }
+      }
+      &-yellow{
+         &:hover {
+            color: #FC9D3B;
+            background-color: white;
+            scale: 1.05;
+         }
+      }
+   }
+   &__cards{
+      margin-bottom: 120px;
+      @media (max-width: 400px) {
+         flex-direction: column !important;
+         margin-bottom: 60px;
+      }
+   }
+}
+
+// 2. Pool_ico
+
+.pool__ico{
+   margin-top: 36px;
+   margin-bottom: 120px;
+}

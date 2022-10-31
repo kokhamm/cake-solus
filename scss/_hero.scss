@@ -1,0 +1,67 @@
+// 1. Hero
+
+.hero{
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   padding-top: 60px;
+   padding-bottom: 60px;
+   transition: 1s;
+   &__bottom{
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 400px) {
+         display: none !important;
+      }
+   }
+   &__introduction{
+      font-weight: 700;
+      line-height: 24px;
+      color: white;
+   }
+   &__arrow{
+      position: absolute;
+      bottom: 60px;
+      animation-name: arrow-hero;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+   }
+   &__social{
+      display: flex;
+      &-ico{
+         margin-right: 30px;
+         opacity: 0.6;
+         transition: 0.3s;
+         &:last-child{
+            margin-right: 0;
+         }
+         &:hover{
+            opacity: 1;
+         }
+      }
+   }
+   &-block{
+      background-color: $blue-color;
+   }
+}
+
+// 2. Animation
+
+@keyframes arrow-hero {
+   0%{
+      bottom: 60px;
+   }
+   50%{
+      bottom: 50px;;
+   }
+   100%{
+      bottom: 60px;
+   }
+}

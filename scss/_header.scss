@@ -1,0 +1,215 @@
+$blue-color: #5B10FF;
+$join-transition: 0.3s;
+$grey-color: white;
+
+// 1. Header 
+
+.header{
+   &-block{
+      background-color: $blue-color;
+      position: fixed;
+      padding-top: 47px;
+      transition: 0.5s;
+      right: 0;
+      left: 0;
+      top: 0;
+      z-index: 100;
+      @media (max-width: 400px) {
+         padding-top: 17px;
+      }
+   }
+   &__promotion{
+      display: flex;
+      align-items: center;
+      transition: 0.4s;
+      &:hover{
+         opacity: 0.6;
+      }
+      @media (max-width: 1170px) {
+         display: none !important;
+      }
+   }
+   &__button {
+      position: relative;
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+
+      &::after,
+      &::before {
+         content: "";
+         position: absolute;
+         height: 4px;
+         background-color: $grey-color;
+         transition: 0.5s;
+      }
+
+      &::before {
+         width: 30px;
+         top: 0;
+      }
+
+      &::after {
+         bottom: 0;
+         width: 10px;
+      }
+
+      @media (min-width:1170px) {
+         display: none;
+      }
+   }
+
+   &__midline {
+      width: 20px;
+      position: absolute;
+      top: 50%;
+      height: 4px;
+      background-color: $grey-color;
+      transform: translate(0px, -50%);
+      transition: 0.5s;
+      
+   }
+}
+
+.header-thin{
+   padding-top: 0;
+}
+
+.cake-ico{
+   margin-right: 36px;
+}
+
+.navbar-nav{
+   @media (max-width: 1170px) {
+      display: none;
+   }
+}
+
+// 2. Bootstrap
+
+.nav{
+   &-item{
+      display: flex;
+      align-items: center;
+      margin-right: 44px;
+      &:last-child {
+         margin-right: 0;
+      }
+   }
+   &-link{
+      color: white;
+      line-height: 21px;
+      opacity: 0.6;
+      transition: $join-transition;
+      &:hover,
+      &:focus{
+         opacity: 1;
+         color: white;
+      }
+   }
+}
+
+// 3. Join-us
+
+.join-us{
+   &-txt{
+      margin-right: 2px;
+   }
+   &:hover,
+   &:focus{
+      .join-ico{
+         opacity: 1;
+      }
+      .join-us-txt {
+         opacity: 1;
+      }
+   }
+}
+.join-ico{
+   opacity: 0.6;
+   transition: $join-transition;
+   cursor: pointer;
+}
+
+// 4. Pool by cake
+
+.pool-by-cake{
+   font-weight: 700;
+   line-height: 21px;
+   color: white;
+   letter-spacing: 1px;
+   margin-left: 20px;
+   margin-right: 10px;
+}
+
+// 5. Lock
+
+.lock{
+   overflow: hidden;
+}
+
+// 6. Button
+
+.pressed {
+   .header__midline {
+      width: 0;
+   }
+}
+
+.pressed.header__button::after {
+   width: 30px;
+   transform: rotateZ(-45deg) translateY(-8px) translateX(4.5px);
+}
+
+.pressed.header__button::before {
+   transform: rotateZ(45deg) translateY(8px) translateX(4.5px);
+}
+
+// 7. Mobile menu
+
+.menu {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: $blue-color;
+   transform: translateX(-375px);
+   width: 100%;
+   position: absolute;
+   top: 135px;
+   opacity: 0;
+   visibility: hidden;
+   transition: 0.5s;
+   padding: 31px 20px 1000px;
+
+   &__item {
+      color: $grey-color;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 140%;
+   }
+
+   &__list {
+      li {
+         padding-bottom: 40px;
+         text-align: center;
+
+         &:last-child {
+            padding-bottom: 69px;
+         }
+      }
+   }
+
+   @media (min-width:1170px) {
+      display: none;
+   }
+}
+
+.menu.show {
+   opacity: 1;
+   visibility: visible;
+   transform: translateX(0);
+}
+
+.menu.thin {
+   top: 65px;
+}

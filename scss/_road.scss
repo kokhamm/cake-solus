@@ -1,0 +1,58 @@
+
+// 1. Road
+
+.road{
+   &__container {
+      max-width: 1112px;
+      margin: 0 auto;
+   }
+   &__header{
+      font-size: 40px;
+      line-height: 60px;
+      text-align: center;
+      margin-bottom: 120px;
+      @media (max-width: 400px) {
+         margin-bottom: 60px;
+      }
+   }
+   &__month{
+      margin-right: 90px;
+      font-size: 18px;
+      line-height: 23px;
+      &-light{
+         opacity: 0.2;
+      }
+      &-dark{
+         opacity: 0.6;
+      }
+      &-blue{
+         color: $blue-color;
+      }
+   }
+   &__task{
+      font-size: 24px;
+      line-height: 42px;
+   }
+   &__line{
+      margin-bottom: 20px;
+      &:last-child{
+         margin-bottom: 120px;
+         @media (max-width: 400px) {
+            margin-bottom: 60px;
+         }
+      }
+   }
+   &__hr{
+      opacity: 0.1;
+      background-color: black;
+      border-radius: 1px;
+      height: 2px;
+      display: block;
+      width: 60px;
+      margin-left: 120px;
+      margin-bottom: 30px;
+   }
+   &__bottom{
+      margin-bottom: 73px;
+   }
+}
